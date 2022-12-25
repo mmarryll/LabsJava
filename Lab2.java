@@ -98,6 +98,7 @@ public class Lab2 {
         }
         System.out.println("Number of local minimums:" + NumOfLocalMin(matrix,N, M));
         System.out.println("Matrix with the greatest element in the highest left corner:");
+        
         TheGreatestInHighestLeft(matrix, N, M);
         OutputMatrix(matrix, N, M);
     }
