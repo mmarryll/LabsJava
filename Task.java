@@ -88,6 +88,7 @@ public class Task {
 
                 oos.flush();
                 oos.close();
+                
             } catch (IOException exc) {
                 System.out.println("Что-то пошло не так");
                 return;
