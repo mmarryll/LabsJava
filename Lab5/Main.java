@@ -9,13 +9,13 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args)
     {
-        Path path = Path.of("input.txt");
-        List<Integer> maxSizes = new ArrayList<>();
-        List<String> result = new ArrayList<>();
+        Path path = Path.of("in.txt");
+        List<Integer> maxsz = new ArrayList<>();
+        List<String> res = new ArrayList<>();
         String regex = "\\d+";
         Pattern pattern = Pattern.compile(regex);
         List<String> list = null;
-        int maxSize = 0;
+        int maxsz_ = 0;
         try {
             list = Files.readAllLines(path);
         }
@@ -27,25 +27,25 @@ public class Main {
             Matcher matcher = pattern.matcher(str);
             int max = 0;
             while(matcher.find()){
-                int grlen = matcher.group().length();
-                if (grlen > max){
-                    max = grlen;
+                int length = matcher.group().length();
+                if (length > max){
+                    max = length;
                 }
             }
-            maxSizes.add(max);
+            maxsz.add(max);
         }
-        for (Integer i : maxSizes){
-            if (i > maxSize){
-                maxSize = i;
+        for (Integer i : maxsz){
+            if (i > maxsz_){
+                maxsz_ = i;
             }
         }
-        for (int i = 0; i < maxSizes.size(); i++){
-            if (maxSizes.get(i) == maxSize){
-                result.add(list.get(i));
+        for (int i = 0; i < maxsz.size(); i++){
+            if (maxsz.get(i) == maxsz_){
+                res.add(list.get(i));
             }
         }
-        for (int i = 0; i < result.size() && i < 10; i++){
-            System.out.println(result.get(i));
+        for (int i = 0; i < res.size() && i < 10; i++){
+            System.out.println(res.get(i));
         }
     }
 }
